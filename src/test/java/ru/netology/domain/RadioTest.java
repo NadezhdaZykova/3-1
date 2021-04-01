@@ -11,9 +11,9 @@ public class RadioTest {
     public void changeStation() {
         Radio radio = new Radio();
         assertNull(radio.name);
-        assertEquals(9, radio.maxNumberStation);
-        assertEquals(1, radio.minNumberStation);
-        assertEquals(5, radio.currentStation);
+        assertEquals(0, radio.maxNumberStation);
+        assertEquals(0, radio.minNumberStation);
+        assertEquals(0, radio.currentStation);
         assertFalse(radio.on);
     }
 
@@ -28,9 +28,9 @@ public class RadioTest {
     public void changeVolume() {
         Radio radio = new Radio();
         assertNull(radio.name);
-        assertEquals(10, radio.maxVolume);
+        assertEquals(0, radio.maxVolume);
         assertEquals(0, radio.minVolume);
-        assertEquals(5, radio.currentVolume);
+        assertEquals(0, radio.currentVolume);
         assertFalse(radio.on);
     }
 }
