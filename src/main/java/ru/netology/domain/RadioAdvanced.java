@@ -1,14 +1,22 @@
 package ru.netology.domain;
 
 public class RadioAdvanced {
+    private String name;
     private int maxNumberStation;
     private int minNumberStation;
-    private int numberCurrentStation;
-    private int maxSoundVolume;
-    private int minSoundVolume;
-    private int CurrentSoundVolume;
+    private int currentStation;
+    private int maxVolume;
+    private int minVolume;
+    private int currentVolume;
     private boolean on;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public int getMaxNumberStation() {
         return maxNumberStation;
@@ -26,41 +34,47 @@ public class RadioAdvanced {
         this.minNumberStation = minNumberStation;
     }
 
-    public int getNumberCurrentStation() {
-        return numberCurrentStation;
+    public int getCurrentStation() {
+        return currentStation;
     }
 
-    public void setNumberCurrentStation(int numberCurrentStation) {
-        if (numberCurrentStation > minNumberStation) {
+    public void setCurrentStation(int currentStation) {
+        if (currentStation > maxNumberStation) {
+            return;
         }
-        this.numberCurrentStation = numberCurrentStation;
-        if (numberCurrentStation < maxNumberStation) {
+        if (currentStation < minNumberStation) {
+            return;
         }
-        this.numberCurrentStation = numberCurrentStation;
+        this.currentStation = currentStation;
     }
 
-    public int getMaxSoundVolume() {
-        return maxSoundVolume;
+    public int getMaxVolume() {
+        return maxVolume;
     }
 
-    public void setMaxSoundVolume(int maxSoundVolume) {
-        this.maxSoundVolume = maxSoundVolume;
+    public void setMaxVolume(int maxVolume) {
+        this.maxVolume = maxVolume;
     }
 
-    public int getMinSoundVolume() {
-        return minSoundVolume;
+    public int getMinVolume() {
+        return minVolume;
     }
 
-    public void setMinSoundVolume(int minSoundVolume) {
-        this.minSoundVolume = minSoundVolume;
+    public void setMinVolume(int minVolume) {
+        this.minVolume = minVolume;
     }
 
-    public int getCurrentSoundVolume() {
-        return CurrentSoundVolume;
+    public int getCurrentVolume() {
+        return currentVolume;
     }
 
-    public void setCurrentSoundVolume(int currentSoundVolume) {
-        CurrentSoundVolume = currentSoundVolume;
+    public void setCurrentVolume(int currentVolume) {
+        if (currentVolume <= maxVolume) {
+            if (currentVolume >= minVolume) {
+                this.currentVolume = currentVolume;
+            }
+        }
+        this.currentVolume = currentVolume;
     }
 
     public boolean isOn() {
@@ -71,3 +85,4 @@ public class RadioAdvanced {
         this.on = on;
     }
 }
+

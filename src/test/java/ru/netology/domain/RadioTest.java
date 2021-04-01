@@ -7,15 +7,30 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class RadioTest {
 
-    @Disabled
     @Test
-    public void changeStation(int NumberCurrentStation) {
-        RadioAdvanced radio = new RadioAdvanced();
-        radio.setMaxNumberStation(9);
-        radio.setMinNumberStation(1);
-        assertEquals(5, radio.getNumberCurrentStation());
-        radio.setNumberCurrentStation(1);
-        assertEquals(5, radio.getNumberCurrentStation());
+    public void changeStation() {
+        Radio radio = new Radio();
+        assertNull(radio.name);
+        assertEquals(9, radio.maxNumberStation);
+        assertEquals(1, radio.minNumberStation);
+        assertEquals(5, radio.currentStation);
+        assertFalse(radio.on);
+    }
 
+    @Test
+    @Disabled
+    public void shouldThrowNPE() {
+        Radio radio = new Radio();
+        assertEquals(0, radio.name.length());
+    }
+
+    @Test
+    public void changeVolume() {
+        Radio radio = new Radio();
+        assertNull(radio.name);
+        assertEquals(10, radio.maxVolume);
+        assertEquals(0, radio.minVolume);
+        assertEquals(5, radio.currentVolume);
+        assertFalse(radio.on);
     }
 }

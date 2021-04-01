@@ -7,13 +7,18 @@ import static org.junit.jupiter.api.Assertions.*;
 class RadioAdvancedTest {
 
     @Test
-    public void changeStation(int NumberCurrentStation) {
+    public void changeStation() {
         RadioAdvanced radio = new RadioAdvanced();
         radio.setMaxNumberStation(9);
-        radio.setMinNumberStation(1);
-        assertEquals(5, radio.getNumberCurrentStation());
-        radio.setNumberCurrentStation(1);
-        assertEquals(5, radio.getNumberCurrentStation());
+        radio.setCurrentStation(5);
+        assertEquals(5, radio.getCurrentStation());
+    }
 
+    @Test
+    public void changeVolume() {
+        RadioAdvanced radio = new RadioAdvanced();
+        radio.setMaxVolume(10);
+        radio.setCurrentVolume(5);
+        assertEquals(5, radio.getCurrentVolume());
     }
 }
