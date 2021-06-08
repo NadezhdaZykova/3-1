@@ -2,10 +2,10 @@ package ru.netology.domain;
 
 public class RadioAdvanced {
     private String name;
-    private int maxNumberStation;
+    private int maxNumberStation = 9;
     private int minNumberStation;
     private int currentStation;
-    private int maxVolume;
+    private int maxVolume = 10;
     private int minVolume;
     private int currentVolume;
     private boolean on;
@@ -69,13 +69,52 @@ public class RadioAdvanced {
     }
 
     public void setCurrentVolume(int currentVolume) {
-        if (currentVolume <= maxVolume) {
-            if (currentVolume >= minVolume) {
-                this.currentVolume = currentVolume;
-            }
+        if (currentVolume > maxVolume) {
+            return;
+        }
+        if (currentVolume < minVolume) {
+            return;
         }
         this.currentVolume = currentVolume;
     }
+
+    public int increaseVolume() {
+        if (currentVolume < 10) {
+            currentVolume = currentVolume + 1;
+        }
+        return currentVolume;
+    }
+
+    public int decreaseVolume() {
+        if (currentVolume <= maxVolume) {
+            currentVolume = currentVolume - 1;
+        }
+        if (currentVolume <= minVolume) {
+            currentVolume = 0;
+        }
+        return currentVolume;
+    }
+
+    public int increaseStation() {
+        if (currentStation <= maxNumberStation) {
+            currentStation = currentStation + 1;
+        }
+        if (currentStation > 9) {
+            currentStation = 0;
+        }
+        return currentStation;
+    }
+
+    public int decreaseStation() {
+        if (currentStation <= maxNumberStation) {
+            currentStation = currentStation - 1;
+        }
+        if (currentStation < minNumberStation) {
+            currentStation = 9;
+        }
+        return currentStation;
+    }
+
 
     public boolean isOn() {
         return on;
