@@ -18,15 +18,21 @@ class RadioAdvancedTest {
     @Test
     public void changeVolume() {
         radio.setMaxVolume(10);
-        radio.setCurrentVolume(10);
-        assertEquals(10, radio.getCurrentVolume());
+        radio.setCurrentVolume(5);
+        assertEquals(5, radio.getCurrentVolume());
     }
 
     @Test
     public void shouldIncreaseVolumeMoreMax() {
-
         radio.setCurrentVolume(11);
         int expected = 1;
+        assertEquals(expected, radio.increaseVolume());
+    }
+
+    @Test
+    public void shouldIncreaseVolume() {
+        radio.setCurrentVolume(5);
+        int expected = 6;
         assertEquals(expected, radio.increaseVolume());
     }
 
@@ -86,11 +92,6 @@ class RadioAdvancedTest {
 
         int expected = 9;
         assertEquals(expected, radio.decreaseStation());
-    }
-
-    @Test
-    public void shouldCreate() {
-        RadioAdvanced Radio = new RadioAdvanced();
     }
 
     @Test

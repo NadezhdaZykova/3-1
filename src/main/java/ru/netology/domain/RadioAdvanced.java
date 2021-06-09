@@ -14,10 +14,6 @@ public class RadioAdvanced {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getMaxNumberStation() {
         return maxNumberStation;
     }
@@ -58,10 +54,6 @@ public class RadioAdvanced {
 
     public int getMinVolume() {
         return minVolume;
-    }
-
-    public void setMinVolume(int minVolume) {
-        this.minVolume = minVolume;
     }
 
     public int getCurrentVolume() {
@@ -118,10 +110,6 @@ public class RadioAdvanced {
 
     public boolean isOn() {
         return on;
-    }
-
-    public void setOn(boolean on) {
-        this.on = on;
     }
 }
 

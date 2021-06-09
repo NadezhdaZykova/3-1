@@ -5,8 +5,8 @@ public class Radio {
     int maxNumberStation = 9;
     int minNumberStation;
     int currentStation;
-    int maxVolume;
+    int maxVolume = 10;
     int minVolume;
-    int currentVolume = 10;
+    int currentVolume;
     boolean on;
 }
