@@ -1,12 +1,14 @@
 package ru.netology.domain;
 
+import com.sun.source.tree.BreakTree;
+
 public class RadioAdvanced {
     private String name;
     private int maxNumberStation = 9;
-    private int minNumberStation;
+    private int minNumberStation = 0;
     private int currentStation;
     private int maxVolume = 10;
-    private int minVolume;
+    private int minVolume = 0;
     private int currentVolume;
     private boolean on;
 
@@ -78,32 +80,29 @@ public class RadioAdvanced {
     }
 
     public int decreaseVolume() {
-        if (currentVolume <= maxVolume) {
+        if (currentVolume <= maxVolume && currentVolume > 0) {
             currentVolume = currentVolume - 1;
-        }
-        if (currentVolume <= minVolume) {
-            currentVolume = 0;
         }
         return currentVolume;
     }
 
     public int increaseStation() {
-        if (currentStation <= maxNumberStation) {
+        if (currentStation < maxNumberStation | currentStation == minNumberStation) {
             currentStation = currentStation + 1;
         }
-        if (currentStation > 9) {
+        if (currentStation == 9) {
             currentStation = 0;
         }
         return currentStation;
     }
 
     public int decreaseStation() {
-        if (currentStation <= maxNumberStation) {
+        if (currentStation > minNumberStation) {
             currentStation = currentStation - 1;
         }
-        if (currentStation < minNumberStation) {
-            currentStation = 9;
-        }
+        else if(currentStation == 0) {
+                currentStation = maxNumberStation;
+            }
         return currentStation;
     }
 
