@@ -55,7 +55,6 @@ class RadioAdvancedTest {
     @Test
     public void shouldDecreaseVolume() {
         radio.setCurrentVolume(10);
-
         int expected = 9;
         assertEquals(expected, radio.decreaseVolume());
     }
