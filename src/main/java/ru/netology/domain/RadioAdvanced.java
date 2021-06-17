@@ -73,7 +73,7 @@ public class RadioAdvanced {
     }
 
     public int increaseVolume() {
-        if (currentVolume < 10) {
+        if (currentVolume < maxVolume) {
             currentVolume = currentVolume + 1;
         }
         return currentVolume;
@@ -90,7 +90,7 @@ public class RadioAdvanced {
         if (currentStation < maxNumberStation | currentStation == minNumberStation) {
             currentStation = currentStation + 1;
         }
-        if (currentStation == 9) {
+        else  {
             currentStation = 0;
         }
         return currentStation;
@@ -99,10 +99,9 @@ public class RadioAdvanced {
     public int decreaseStation() {
         if (currentStation > minNumberStation) {
             currentStation = currentStation - 1;
+        } else {
+            currentStation = maxNumberStation;
         }
-        else {
-                currentStation = maxNumberStation;
-            }
         return currentStation;
     }
 

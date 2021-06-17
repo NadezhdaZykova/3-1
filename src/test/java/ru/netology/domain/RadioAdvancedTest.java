@@ -109,6 +109,12 @@ class RadioAdvancedTest {
         assertEquals(expected, radio.increaseStation());
     }
 
+    @Test
+    public void shouldIncreaseWhenStationLessMax() {
+        radio.setCurrentStation(8);
+        int expected = 9;
+        assertEquals(expected, radio.increaseStation());
+    }
 
 
     @Test
