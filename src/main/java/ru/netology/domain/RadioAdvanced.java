@@ -1,16 +1,37 @@
 package ru.netology.domain;
 
 import com.sun.source.tree.BreakTree;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 
 public class RadioAdvanced {
     private String name;
     private int maxNumberStation = 9;
     private int minNumberStation = 0;
     private int currentStation;
-    private int maxVolume = 10;
+    private int maxVolume = 100;
     private int minVolume = 0;
     private int currentVolume;
     private boolean on;
+
+    public RadioAdvanced(int maxNumberStation, int minNumberStation, int currentStation, int maxVolume, int minVolume, int currentVolume) {
+        this.maxNumberStation = maxNumberStation;
+        this.minNumberStation = minNumberStation;
+        this.currentStation = currentStation;
+        this.maxVolume = maxVolume;
+        this.minVolume = minVolume;
+        this.currentVolume = currentVolume;
+    }
+
+    public RadioAdvanced(int maxNumberStation) {
+        this.maxNumberStation = maxNumberStation;
+    }
+
+    public RadioAdvanced() {
+    }
+
 
     public String getName() {
         return name;
